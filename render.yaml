@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ordo-brand-cdn
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    healthCheckPath: /

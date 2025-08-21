@@ -1,0 +1,15 @@
+{
+  "name": "ordotools-brand",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "mkdir -p dist/v1 dist/latest && npx csso src/brand.css --output dist/v1/brand.min.css && cp dist/v1/brand.min.css dist/latest/brand.min.css",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "csso": "^5.0.5"
+  }
+}

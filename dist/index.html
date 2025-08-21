@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrdoTools Brand CDN</title>
+  <link rel="stylesheet" href="/v1/brand.min.css" />
+  <style>
+    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .copy{cursor:pointer;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:8px 10px}
+    input.link{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:inherit;padding:10px 12px}
+    .kick{margin-top:20px}
+    .muted{color:#bfc6d4}
+  </style>
+</head>
+<body>
+  <main class="container stack">
+    <h1>OrdoTools Brand CDN</h1>
+    <p class="small">Use the links below to include the CSS in any project. Pin to a version for stability.</p>
+
+    <section class="card stack">
+      <h2>Versioned (recommended)</h2>
+      <div class="row">
+        <input id="v1" class="link" readonly value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.ordotools.org/v1/brand.min.css&quot; /&gt;">
+        <button class="copy" data-for="v1">Copy</button>
+      </div>
+      <p class="muted">Cache: 1 year, immutable</p>
+    </section>
+
+    <section class="card stack">
+      <h2>Latest (mutable)</h2>
+      <div class="row">
+        <input id="latest" class="link" readonly value="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.ordotools.org/latest/brand.min.css&quot; /&gt;">
+        <button class="copy" data-for="latest">Copy</button>
+      </div>
+      <p class="muted">Cache: 5 minutes. Use for experiments only.</p>
+    </section>
+
+    <section class="card stack">
+      <h2>SRI (Subresource Integrity)</h2>
+      <div class="row">
+        <input id="sri" class="link" readonly value="integrity=&quot;sha384-REPLACE_WITH_HASH&quot; crossorigin=&quot;anonymous&quot;">
+        <button class="copy" data-for="sri">Copy</button>
+      </div>
+      <p class="muted">Generate after each release: <code class="code">openssl dgst -sha384 -binary dist/v1/brand.min.css | openssl base64 -A</code></p>
+    </section>
+
+    <section class="card stack">
+      <h2>Sample</h2>
+      <p>Open the <a href="/sample.html">Kitchen Sink</a> to preview elements.</p>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.for;
+        const input = document.getElementById(id);
+        input.select(); input.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(input.value.replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
+        btn.textContent = 'Copied!';
+        setTimeout(()=>btn.textContent='Copy', 1200);
+      });
+    });
+  </script>
+</body>
+</html>
