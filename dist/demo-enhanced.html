@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrdoTools Enhanced CDN Demo</title>
+    <link rel="stylesheet" href="v1/brand.min.css">
+    <style>
+        /* Demo-specific styles */
+        .demo-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-1);
+            background: var(--surface-secondary);
+        }
+        
+        .demo-section h2 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .demo-item {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-1);
+            background: var(--surface-primary);
+        }
+        
+        .demo-item h4 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <h2 class="sidebar__brand">Enhanced CDN</h2>
+            </div>
+            <nav class="sidebar__nav">
+                <a href="#overview" class="nav-item nav-item--active">
+                    <span class="nav-item__icon">📊</span>
+                    <span class="nav-item__text">Overview</span>
+                </a>
+                <a href="#layout" class="nav-item">
+                    <span class="nav-item__icon">🏗️</span>
+                    <span class="nav-item__text">Layout</span>
+                </a>
+                <a href="#components" class="nav-item">
+                    <span class="nav-item__icon">🧩</span>
+                    <span class="nav-item__text">Components</span>
+                </a>
+                <a href="#forms" class="nav-item">
+                    <span class="nav-item__icon">📝</span>
+                    <span class="nav-item__text">Forms</span>
+                </a>
+                <a href="#utilities" class="nav-item">
+                    <span class="nav-item__icon">🔧</span>
+                    <span class="nav-item__text">Utilities</span>
+                </a>
+            </nav>
+            
+            <div class="theme-toggle">
+                <button class="theme-toggle__button">Toggle Theme</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle btn btn--primary">☰ Menu</button>
+            
+            <!-- Overview Section -->
+            <section id="overview" class="demo-section">
+                <header class="page-header">
+                    <h2 class="page-header__title">Enhanced OrdoTools CDN</h2>
+                    <p class="page-header__description">Comprehensive design system with integrated SIS-QASACADEMY styles</p>
+                </header>
+                
+                <div class="grid-dashboard">
+                    <div class="card--status">
+                        <h3 class="card--status__label">Total Components</h3>
+                        <p class="card--status__value">50+</p>
+                    </div>
+                    <div class="card--status">
+                        <h3 class="card--status__label">Color Variables</h3>
+                        <p class="card--status__value">25+</p>
+                    </div>
+                    <div class="card--status">
+                        <h3 class="card--status__label">Utility Classes</h3>
+                        <p class="card--status__value">100+</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Layout Section -->
+            <section id="layout" class="demo-section">
+                <h2>Layout System</h2>
+                
+                <h3>Grid Layouts</h3>
+                <div class="grid-auto-fit">
+                    <div class="card">Auto-fit Grid Item 1</div>
+                    <div class="card">Auto-fit Grid Item 2</div>
+                    <div class="card">Auto-fit Grid Item 3</div>
+                </div>
+                
+                <h3>Responsive Grid</h3>
+                <div class="grid-responsive">
+                    <div class="card">Responsive Item 1</div>
+                    <div class="card">Responsive Item 2</div>
+                </div>
+                
+                <h3>Content Sections</h3>
+                <div class="content-section" id="section1">
+                    <p>This is section 1 content.</p>
+                </div>
+                <div class="content-section content-section--active" id="section2">
+                    <p>This is section 2 content (active).</p>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section id="components" class="demo-section">
+                <h2>Component System</h2>
+                
+                <h3>Card Variations</h3>
+                <div class="demo-grid">
+                    <div class="card--status">
+                        <h3 class="card--status__label">Status Card</h3>
+                        <p class="card--status__value">Active</p>
+                    </div>
+                    
+                    <div class="card--table">
+                        <h3 class="card--table__title">Table Card</h3>
+                        <p class="card--table__description">Recent activity</p>
+                        <span class="card--table__count">12</span>
+                    </div>
+                    
+                    <div class="card--metric">
+                        <div class="card--metric__header">
+                            <h3 class="card--metric__title">Morning Session</h3>
+                            <span class="card--metric__value">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card--info">
+                        <h3 class="card--info__title">Information</h3>
+                        <p>This is an info card with additional details.</p>
+                    </div>
+                </div>
+                
+                <h3>Data Display</h3>
+                <div class="demo-item">
+                    <h4>Data Table</h4>
+                    <table class="table--data">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td><span class="badge--status--active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>jane@example.com</td>
+                                <td><span class="badge--status--completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Entity List</h3>
+                <div class="entity-list-container">
+                    <div class="entity-item">
+                        <div class="entity-details">
+                            <h4>John Doe</h4>
+                            <p>john@example.com</p>
+                        </div>
+                        <div class="entity-status">
+                            <span class="badge--status--active">Active</span>
+                        </div>
+                    </div>
+                    <div class="entity-item">
+                        <div class="entity-details">
+                            <h4>Jane Smith</h4>
+                            <p>jane@example.com</p>
+                        </div>
+                        <div class="entity-status">
+                            <span class="badge--status--completed">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forms Section -->
+            <section id="forms" class="demo-section">
+                <h2>Form System</h2>
+                
+                <h3>Form Groups</h3>
+                <div class="demo-item">
+                    <div class="form-group">
+                        <label class="form-group__label">Email Address</label>
+                        <input type="email" class="form-group__control" placeholder="Enter email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-group__label">Password</label>
+                        <input type="password" class="form-group__control" placeholder="Enter password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-group__label">
+                            <input type="checkbox" class="form-group__checkbox">
+                            Remember me
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="btn btn--primary">Save</button>
+                        <button class="btn btn--secondary">Cancel</button>
+                    </div>
+                </div>
+                
+                <h3>Configuration Forms</h3>
+                <div class="demo-item">
+                    <div class="config-form-row">
+                        <div class="config-form-group">
+                            <label class="config-form-group__label">First Name</label>
+                            <input type="text" class="config-form-control" placeholder="Enter first name">
+                        </div>
+                        <div class="config-form-group">
+                            <label class="config-form-group__label">Last Name</label>
+                            <input type="text" class="config-form-control" placeholder="Enter last name">
+                        </div>
+                    </div>
+                    
+                    <div class="config-form-group">
+                        <label class="config-form-group__label">Email</label>
+                        <input type="email" class="config-form-control" placeholder="Enter email">
+                    </div>
+                </div>
+                
+                <h3>Student Selector</h3>
+                <div class="demo-item">
+                                    <div class="entity-selector">
+                    <label class="entity-selector__label">Select Entity:</label>
+                    <select class="entity-selector__select">
+                        <option>Choose an entity...</option>
+                        <option>John Doe</option>
+                        <option>Jane Smith</option>
+                        <option>Bob Johnson</option>
+                    </select>
+                </div>
+                </div>
+            </section>
+
+            <!-- Utilities Section -->
+            <section id="utilities" class="demo-section">
+                <h2>Utility Classes</h2>
+                
+                <h3>Status Badges</h3>
+                <div class="demo-item">
+                    <span class="badge--status badge--status--draft">Draft</span>
+                    <span class="badge--status badge--status--approved">Approved</span>
+                    <span class="badge--status badge--status--active">Active</span>
+                    <span class="badge--status badge--status--completed">Completed</span>
+                    <span class="badge--status badge--status--has-plan">Has Plan</span>
+                    <span class="badge--status badge--status--no-plan">No Plan</span>
+                </div>
+                
+                <h3>Priority Badges</h3>
+                <div class="demo-item">
+                    <span class="badge--priority-1">High Priority</span>
+                    <span class="badge--priority-2">Medium Priority</span>
+                    <span class="badge--priority-3">Low Priority</span>
+                </div>
+                
+                <h3>Button Variations</h3>
+                <div class="demo-item">
+                    <button class="btn btn--primary">Primary</button>
+                    <button class="btn btn--secondary">Secondary</button>
+                    <button class="btn btn--success">Success</button>
+                    <button class="btn btn--danger">Danger</button>
+                    <button class="btn btn--warning">Warning</button>
+                    <button class="btn btn--info">Info</button>
+                </div>
+                
+                <h3>Progress Indicators</h3>
+                <div class="demo-item">
+                    <div class="progress-spinner"></div>
+                    <div class="config-spinner"></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <h3>Notifications</h3>
+                <div class="demo-item">
+                    <div class="notification notification--success">Operation completed successfully!</div>
+                    <div class="notification notification--error">An error occurred</div>
+                    <div class="notification notification--info">Here's some information</div>
+                    <div class="notification notification--warning">Please review your input</div>
+                </div>
+                
+                <h3>Alerts</h3>
+                <div class="demo-item">
+                    <div class="alert alert--success">Success message</div>
+                    <div class="alert alert--error">Error message</div>
+                    <div class="alert alert--info">Info message</div>
+                    <div class="alert alert--warning">Warning message</div>
+                </div>
+                
+                <h3>Pagination</h3>
+                <div class="demo-item">
+                    <div class="pagination">
+                        <button class="pagination__button">Previous</button>
+                        <button class="pagination__button pagination__button--current">1</button>
+                        <button class="pagination__button">2</button>
+                        <button class="pagination__button">3</button>
+                        <button class="pagination__button">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal Demo -->
+            <div class="modal" id="demoModal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h3>Demo Modal</h3>
+                        <button class="btn btn--secondary" onclick="closeModal()">×</button>
+                    </div>
+                    <div class="modal__body">
+                        <p>This is a demo modal showcasing the modal system integration.</p>
+                        <p>You can close this modal using the X button or clicking outside.</p>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="btn btn--primary">Confirm</button>
+                        <button class="btn btn--secondary" onclick="closeModal()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Trigger -->
+            <div class="demo-section">
+                <h2>Interactive Elements</h2>
+                <button class="btn btn--primary" onclick="openModal()">Open Modal</button>
+                
+                <h3>Tabs</h3>
+                <div class="config-tabs">
+                    <button class="config-tab config-tab--active">General</button>
+                    <button class="config-tab">Advanced</button>
+                    <button class="config-tab">Security</button>
+                </div>
+                
+                <div class="planning-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn tab-btn--active">Current</button>
+                        <button class="tab-btn">Planned</button>
+                        <button class="tab-btn">Completed</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Demo functionality
+        function openModal() {
+            document.getElementById('demoModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('demoModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Tab functionality
+        document.querySelectorAll('.config-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.config-tab').forEach(t => t.classList.remove('config-tab--active'));
+                tab.classList.add('config-tab--active');
+            });
+        });
+        
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-btn--active'));
+                btn.classList.add('tab-btn--active');
+            });
+        });
+        
+        // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('nav-item--active'));
+                item.classList.add('nav-item--active');
+                
+                // Scroll to section
+                const href = item.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const section = document.querySelector(href);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('sidebar--open');
+        });
+        
+        // Theme toggle (demo)
+        document.querySelector('.theme-toggle__button').addEventListener('click', () => {
+            document.body.style.filter = document.body.style.filter === 'invert(1)' ? '' : 'invert(1)';
+        });
+    </script>
+</body>
+</html>
